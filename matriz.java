@@ -29,6 +29,7 @@ public class matriz {
         return new int[]{filas, columnas};
     }
 
+
     public static boolean validarDimensiones(int filas, int columnas) {
         return filas > 0 && columnas > 0;
     }
