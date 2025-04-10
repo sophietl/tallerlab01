@@ -46,7 +46,7 @@ public class matriz {
     }
 
     public static void mostrarFila(int[][] matriz, int fila) {
-        // Verificar que la
+        // Verificar que los valores son válidos.
         if (fila >= 0 && fila < matriz.length) {
             // Imprimir todos los elementos de la fila
             for (int i = 0; i < matriz[fila].length; i++) {
@@ -112,7 +112,7 @@ public class matriz {
                     mostrarMatriz(matriz);
                     break;
                 case 3:
-                    // Mostrar fila específica
+                    // Mostrar en específico (indicada por el usuario)
                     System.out.print("Ingrese el número de la fila que desea mostrar: ");
                     int fila = scanner.nextInt();
                     mostrarFila(matriz, fila);
