@@ -67,7 +67,6 @@ public class matriz {
         }
     }
 
-
     public static boolean matrizCero(int[][] matriz) {
         int totalElementos = 0;
         int totalCeros = 0;
