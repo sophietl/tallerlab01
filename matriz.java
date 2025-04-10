@@ -2,18 +2,18 @@ import java.util.Scanner;
 
 public class matriz {
 
-    // Dimensiones
+    // Dimensiones.
     public static void main(String[] args) {
         int[] dimensiones = solicitarDimensiones();
         int filas = dimensiones[0];
         int columnas = dimensiones[1];
 
-        // Verificar si el valor de las dimensiones es válido
+        // Verificar si el valor de las dimensiones es válido.
         if (validarDimensiones(filas, columnas)) {
             int[][] matriz = crearMatriz(filas, columnas);
             llenarMatriz(matriz);
 
-            // Menú
+            // Menú.
             menu(matriz);
         } else {
             System.out.println("Las dimensiones de la matriz no son válidas.");
@@ -40,7 +40,7 @@ public class matriz {
     public static void llenarMatriz(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                matriz[i][j] = (int) (Math.random() * 10);  // Genera un número aleatorio entre 0 y 9
+                matriz[i][j] = (int) (Math.random() * 10);  // Genera un número aleatorio entre 0 y 9.
             }
         }
     }
@@ -48,7 +48,7 @@ public class matriz {
     public static void mostrarFila(int[][] matriz, int fila) {
         // Verificar que los valores son válidos.
         if (fila >= 0 && fila < matriz.length) {
-            // Imprimir todos los elementos de la fila
+            // Mostrar todos los elementos de la fila.
             for (int i = 0; i < matriz[fila].length; i++) {
                 System.out.print(matriz[fila][i] + " ");
             }
@@ -63,7 +63,7 @@ public class matriz {
             for (int j = 0; j < matriz[i].length; j++) {
                 System.out.print(matriz[i][j] + " ");
             }
-            System.out.println();  // Salto de línea al final de cada fila
+            System.out.println();
         }
     }
 
@@ -72,7 +72,7 @@ public class matriz {
         int totalElementos = 0;
         int totalCeros = 0;
 
-        // Contamos los ceros y el total de elementos de la matriz
+        // Contamos los ceros y el total de elementos de la matriz.
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 totalElementos++;
@@ -82,7 +82,7 @@ public class matriz {
             }
         }
 
-        // Verificamos si los ceros representan más del 50% de los elementos
+        // Verificamos si los ceros representan más del 50% de los elementos.
         return totalCeros > totalElementos / 2;
     }
 
@@ -102,27 +102,27 @@ public class matriz {
 
             switch (opcion) {
                 case 1:
-                    // Crear y llenar la matriz
+                    // Crear y llenar la matriz.
                     llenarMatriz(matriz);
                     System.out.println("Matriz creada y llena con valores aleatorios.");
                     break;
                 case 2:
-                    // Mostrar la matriz
+                    // Mostrar la matriz.
                     System.out.println("Matriz completa:");
                     mostrarMatriz(matriz);
                     break;
                 case 3:
-                    // Mostrar en específico (indicada por el usuario)
+                    // Mostrar fila en específico (indicada por el usuario).
                     System.out.print("Ingrese el número de la fila que desea mostrar: ");
                     int fila = scanner.nextInt();
                     mostrarFila(matriz, fila);
                     break;
                 case 4:
-                    // Verificar si la matriz es de tipo cero
+                    // Verificar si la matriz es de tipo cero.
                     if (matrizCero(matriz)) {
-                        System.out.println("La matriz es de tipo cero.");
+                        System.out.println("La matriz SI es de tipo cero.");
                     } else {
-                        System.out.println("La matriz no es de tipo cero.");
+                        System.out.println("La matriz NO es de tipo cero.");
                     }
                     break;
                 case 5:
